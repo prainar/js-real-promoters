@@ -4,6 +4,3 @@ services:
     env: static
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
-    routes:
-      - path: /*
-        destination: /index.html
