@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: js-real-promoters
+    env: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    routes:
+      - path: /*
+        destination: /index.html
