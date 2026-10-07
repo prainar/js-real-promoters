@@ -189,7 +189,8 @@
   .lux-section{padding:72px 0}
   .lux-heading{margin-bottom:34px}
   .lux-head-row{flex-direction:column}
-  .lux-hero-actions .button{flex:1 1 0;min-width:0;padding:14px 10px;white-space:nowrap}
+  .lux-hero-actions{flex-direction:column;align-items:stretch}
+  .lux-hero-actions .button{width:100%}
   .audience-grid,.roadmap-track{grid-template-columns:1fr}
   .event-stream{min-height:180px}
 }
