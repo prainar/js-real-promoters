@@ -1,20 +1,16 @@
 import { Reveal } from "../common/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
-import { PreviewBadge } from "../common/PreviewBadge";
 import { LIFECYCLE } from "../../data/lifecycle";
 
 export function HowItWorksSection() {
   return (
     <section className="lux-section howitworks">
       <div className="shell">
-        <div className="lux-head-row">
-          <SectionHeading
-            kicker="How it works"
-            title={<>From observation to action — <em>a closed loop.</em></>}
-            copy="The design: every finding runs the same path. The loop only acts after a person signs off, then verifies the result on the next site pass. The example below is illustrative."
-          />
-          <PreviewBadge />
-        </div>
+        <SectionHeading
+          kicker="How it works"
+          title={<>From observation to action — <em>a closed loop.</em></>}
+          copy="The design: every finding runs the same path. The loop only acts after a person signs off, then verifies the result on the next site pass. The example below is illustrative."
+        />
         <Reveal>
           <ol className="pipeline" aria-label="Agentic lifecycle">
             {LIFECYCLE.map((s) => (

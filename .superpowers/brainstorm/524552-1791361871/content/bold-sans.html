@@ -1,0 +1,77 @@
+<h2>Bold &amp; confident — big heavy sans</h2>
+<p class="subtitle">Light felt timid. Here's the opposite: large, heavy, high-impact headlines. Luxury through confidence, not delicacy. Paper background, gold accent kept. Click the one that lands.</p>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter+Tight:wght@700;800&family=Archivo:wght@700;800;900&family=Clash+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Clash isn't on Google Fonts; fallback handled gracefully -->
+
+<style>
+  .b { display:grid; gap:20px; }
+  .b-card { border:1px solid #e3ded4; border-radius:12px; overflow:hidden; cursor:pointer; transition:.18s; }
+  .b-card:hover { transform:translateY(-2px); box-shadow:0 16px 40px rgba(25,37,39,.14); }
+  .b-card.selected { outline:3px solid #c9a24a; outline-offset:2px; }
+  .b-foot { padding:13px 30px; background:#efece4; border-top:1px solid #e3ded4; font:600 12px Inter,sans-serif; color:#192527; display:flex; justify-content:space-between; }
+  .b-foot span { font:400 11px ui-monospace,monospace; color:#8a938f; }
+
+  .hero { padding:62px 54px; background:#f6f4ef; color:#192527; }
+  .hero .kicker { font:600 11px Inter,sans-serif; letter-spacing:.26em; text-transform:uppercase; color:#9a7b2e; }
+  .hero .rule { width:48px; height:2px; background:#c9a24a; margin:20px 0 26px; }
+  .hero p.sub { font:400 16px Inter,sans-serif; color:#5c6563; line-height:1.65; max-width:44ch; margin:28px 0 0; }
+  .hero .cta { margin-top:34px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .hero .cta .primary { background:#bb442f; color:#fff; font:600 13px Inter,sans-serif; padding:14px 22px; border-radius:2px; }
+  .hero .cta .secondary { font:600 13px Inter,sans-serif; color:#192527; border:1px solid #cfc9bd; padding:14px 22px; border-radius:2px; }
+  .hero h1 { margin:0; letter-spacing:-.035em; text-transform:none; }
+  .hero h1 em { font-style:normal; color:#bb442f; }
+
+  .f-manrope h1 { font-family:'Manrope',sans-serif; font-weight:800; font-size:64px; line-height:1.0; }
+  .f-intertight h1 { font-family:'Inter Tight',sans-serif; font-weight:800; font-size:66px; line-height:.98; letter-spacing:-.045em; }
+  .f-archivo h1 { font-family:'Archivo',sans-serif; font-weight:900; font-size:60px; line-height:1.0; letter-spacing:-.02em; }
+  .f-archivo h1.expanded { font-stretch:125%; }
+
+  /* uppercase high-impact variant */
+  .f-upper h1 { font-family:'Archivo',sans-serif; font-weight:800; font-size:52px; line-height:1.02; text-transform:uppercase; letter-spacing:-.01em; }
+  .f-upper h1 em { color:#bb442f; }
+</style>
+
+<div class="b">
+  <div class="b-card f-manrope" data-choice="manrope-bold" onclick="toggleSelect(this)">
+    <div class="hero">
+      <div class="kicker">The agentic OS for construction</div><div class="rule"></div>
+      <h1>Construction is physical.<br>Its intelligence <em>shouldn't be.</em></h1>
+      <p class="sub">An intelligence layer for the people who build the world — observing, reasoning, and surfacing what matters, while your team stays in command.</p>
+      <div class="cta"><a class="primary">Explore the platform →</a><a class="secondary">See how it works</a></div>
+    </div>
+    <div class="b-foot">Manrope ExtraBold · 64px <span>bold · geometric · premium</span></div>
+  </div>
+
+  <div class="b-card f-intertight" data-choice="intertight-bold" onclick="toggleSelect(this)">
+    <div class="hero">
+      <div class="kicker">The agentic OS for construction</div><div class="rule"></div>
+      <h1>Construction is physical.<br>Its intelligence <em>shouldn't be.</em></h1>
+      <p class="sub">An intelligence layer for the people who build the world — observing, reasoning, and surfacing what matters, while your team stays in command.</p>
+      <div class="cta"><a class="primary">Explore the platform →</a><a class="secondary">See how it works</a></div>
+    </div>
+    <div class="b-foot">Inter Tight ExtraBold · 66px · tight <span>punchy · modern · architectural</span></div>
+  </div>
+
+  <div class="b-card f-archivo" data-choice="archivo-bold" onclick="toggleSelect(this)">
+    <div class="hero">
+      <div class="kicker">The agentic OS for construction</div><div class="rule"></div>
+      <h1 class="expanded">Construction is physical.<br>Its intelligence <em>shouldn't be.</em></h1>
+      <p class="sub">An intelligence layer for the people who build the world — observing, reasoning, and surfacing what matters, while your team stays in command.</p>
+      <div class="cta"><a class="primary">Explore the platform →</a><a class="secondary">See how it works</a></div>
+    </div>
+    <div class="b-foot">Archivo Black (expanded) · 60px <span>heaviest · industrial · loud</span></div>
+  </div>
+
+  <div class="b-card f-upper" data-choice="archivo-upper" onclick="toggleSelect(this)">
+    <div class="hero">
+      <div class="kicker">The agentic OS for construction</div><div class="rule"></div>
+      <h1>Construction is physical.<br>Its intelligence <em>shouldn't be.</em></h1>
+      <p class="sub">An intelligence layer for the people who build the world — observing, reasoning, and surfacing what matters, while your team stays in command.</p>
+      <div class="cta"><a class="primary">Explore the platform →</a><a class="secondary">See how it works</a></div>
+    </div>
+    <div class="b-foot">Archivo Bold · UPPERCASE <span>maximum impact · fashion-house</span></div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:20px">I also switched the primary CTA to a solid ochre button for more punch. If one of these is close but you want it even bolder/bigger, tell me and I'll crank it further.</p>

@@ -1,6 +1,5 @@
 import { Reveal } from "../common/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
-import { PreviewBadge } from "../common/PreviewBadge";
 import { Icon } from "../common/Icon";
 import { PILLARS } from "../../data/agents";
 
@@ -8,14 +7,11 @@ export function WorkforceSection() {
   return (
     <section className="lux-section lux-bg-2 workforce">
       <div className="shell">
-        <div className="lux-head-row">
-          <SectionHeading
-            kicker="The AI workforce"
-            title={<>A coordinated team, <em>not a chatbot.</em></>}
-            copy="Nine specialist agents, grouped into three engines. Each reads the project, reasons about it, and hands findings to a human — with every claim traced to a source."
-          />
-          <PreviewBadge />
-        </div>
+        <SectionHeading
+          kicker="The AI workforce"
+          title={<>A coordinated team, <em>not a chatbot.</em></>}
+          copy="Nine specialist agents, grouped into three engines. Each reads the project, reasons about it, and hands findings to a human — with every claim traced to a source."
+        />
         <div className="pillar-grid">
           {PILLARS.map((pillar, pi) => (
             <Reveal key={pillar.id} delay={pi * 0.08}>

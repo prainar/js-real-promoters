@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "../../App";
-import { PreviewBadge } from "../common/PreviewBadge";
 
 // Bold static editorial hero on warm paper. Big Manrope ExtraBold headline,
 // gold kicker + hairline, one architectural image, ochre + ghost CTA.
@@ -49,14 +48,6 @@ export function HeroSection() {
             <Link to="/contact" className="button button-ghost-dark">
               Talk to the team
             </Link>
-          </motion.div>
-          <motion.div
-            className="lux-hero-badge"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <PreviewBadge label="Platform in development · engineer-led construction today" />
           </motion.div>
         </div>
 

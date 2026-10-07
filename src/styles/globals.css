@@ -67,10 +67,15 @@
 .agent-row{display:flex;gap:13px;align-items:flex-start}
 .agent-icon{flex:none;width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:4px;color:var(--orange);background:#faf8f3}
 .agent-row strong{display:block;font:700 14px Manrope,sans-serif;margin-bottom:3px}
-.agent-row span{display:block;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.agent-row>div span{display:block;font-size:12.5px;line-height:1.5;color:var(--muted)}
 
 /* How it works pipeline */
-.pipeline{list-style:none;padding:0 0 8px;margin:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(210px,1fr);gap:16px;overflow-x:auto}
+.howitworks{padding-bottom:64px}
+.pipeline{list-style:none;padding:0;margin:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(210px,1fr);gap:16px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.pipeline::-webkit-scrollbar{height:6px}
+.pipeline::-webkit-scrollbar-track{background:transparent}
+.pipeline::-webkit-scrollbar-thumb{background:transparent;border-radius:3px}
+.pipeline:hover::-webkit-scrollbar-thumb{background:var(--line)}
 .pipeline-stage{position:relative;border:1px solid var(--line);border-radius:6px;padding:24px 22px;background:#fff}
 .pipeline-stage-human{border-color:rgba(187,68,47,.4);background:#fff8f5}
 .pipeline-index{font:800 13px Manrope,sans-serif;color:var(--gold-ink);letter-spacing:.08em}

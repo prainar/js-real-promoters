@@ -1,6 +1,5 @@
 import { Reveal } from "../common/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
-import { PreviewBadge } from "../common/PreviewBadge";
 
 export function SiteIntelligenceSection() {
   return (
@@ -20,7 +19,6 @@ export function SiteIntelligenceSection() {
             title={<>Site captures become <em>searchable memory.</em></>}
             copy="The goal: every image, video, and site capture joins the project's evolving record — so a question about last week's pour is answered in seconds, with the exact frame attached."
           />
-          <div className="lux-split-badge"><PreviewBadge /></div>
         </div>
       </div>
     </section>

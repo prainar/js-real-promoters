@@ -1,0 +1,66 @@
+<h2>Direction B — pick the display typeface</h2>
+<p class="subtitle">The serif headline is the personality of the editorial look. Same headline, four pairings. Body stays Inter in all. Click one, or tell me in the terminal.</p>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Libre+Caslon+Display&family=Playfair+Display:ital,wght@0,600;1,500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  .ty { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media(max-width:720px){ .ty{ grid-template-columns:1fr; } }
+  .ty-card { border:1px solid #e3ded4; border-radius:10px; overflow:hidden; cursor:pointer; transition:.15s; background:#f6f4ef; }
+  .ty-card:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(25,37,39,.1); }
+  .ty-card.selected { outline:3px solid #bb442f; }
+  .ty-body { padding:26px 26px 22px; color:#192527; }
+  .ty-eye { font:600 10.5px Inter,sans-serif; letter-spacing:.18em; color:#bb442f; text-transform:uppercase; }
+  .ty-h { margin:14px 0 0; line-height:1.02; letter-spacing:-.02em; }
+  .ty-h em { color:#667173; }
+  .ty-copy { font:400 13px Inter,sans-serif; color:#667173; line-height:1.6; margin:16px 0 0; max-width:34ch; }
+  .ty-foot { padding:12px 26px; background:#efece4; border-top:1px solid #e3ded4; font:600 12px Inter,sans-serif; color:#192527; display:flex; justify-content:space-between; }
+  .ty-foot span { font:400 11px ui-monospace,monospace; color:#8a938f; }
+
+  .f-fraunces .ty-h { font-family:'Fraunces',Georgia,serif; font-weight:600; font-size:38px; }
+  .f-fraunces .ty-h em { font-style:italic; font-weight:500; }
+  .f-caslon .ty-h { font-family:'Libre Caslon Display',Georgia,serif; font-weight:400; font-size:38px; }
+  .f-caslon .ty-h em { font-style:italic; }
+  .f-playfair .ty-h { font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:38px; }
+  .f-playfair .ty-h em { font-style:italic; font-weight:500; }
+  .f-instrument .ty-h { font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:44px; }
+  .f-instrument .ty-h em { font-style:italic; }
+</style>
+
+<div class="ty">
+  <div class="ty-card f-fraunces" data-choice="fraunces" onclick="toggleSelect(this)">
+    <div class="ty-body">
+      <span class="ty-eye">The agentic OS for construction</span>
+      <h2 class="ty-h">Construction is physical.<br><em>Its intelligence shouldn't be.</em></h2>
+      <p class="ty-copy">We build intelligence for the people who build the world.</p>
+    </div>
+    <div class="ty-foot">Fraunces <span>warm · modern · a little quirky</span></div>
+  </div>
+
+  <div class="ty-card f-caslon" data-choice="caslon" onclick="toggleSelect(this)">
+    <div class="ty-body">
+      <span class="ty-eye">The agentic OS for construction</span>
+      <h2 class="ty-h">Construction is physical.<br><em>Its intelligence shouldn't be.</em></h2>
+      <p class="ty-copy">We build intelligence for the people who build the world.</p>
+    </div>
+    <div class="ty-foot">Libre Caslon Display <span>classic · editorial · authoritative</span></div>
+  </div>
+
+  <div class="ty-card f-playfair" data-choice="playfair" onclick="toggleSelect(this)">
+    <div class="ty-body">
+      <span class="ty-eye">The agentic OS for construction</span>
+      <h2 class="ty-h">Construction is physical.<br><em>Its intelligence shouldn't be.</em></h2>
+      <p class="ty-copy">We build intelligence for the people who build the world.</p>
+    </div>
+    <div class="ty-foot">Playfair Display <span>high-contrast · luxe · fashion-ish</span></div>
+  </div>
+
+  <div class="ty-card f-instrument" data-choice="instrument" onclick="toggleSelect(this)">
+    <div class="ty-body">
+      <span class="ty-eye">The agentic OS for construction</span>
+      <h2 class="ty-h">Construction is physical.<br><em>Its intelligence shouldn't be.</em></h2>
+      <p class="ty-copy">We build intelligence for the people who build the world.</p>
+    </div>
+    <div class="ty-foot">Instrument Serif <span>airy · elegant · understated</span></div>
+  </div>
+</div>
