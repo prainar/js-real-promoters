@@ -1,5 +1,6 @@
 import { Reveal } from "../common/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
+import { PreviewBadge } from "../common/PreviewBadge";
 
 export function SiteIntelligenceSection() {
   return (
@@ -11,14 +12,15 @@ export function SiteIntelligenceSection() {
             alt="Construction site under observation"
             draggable={false}
           />
-          <span className="site-intel-tag">Zone A · structural 87% · 1 needs review</span>
+          <span className="site-intel-tag">Illustrative · Zone A · 1 item to review</span>
         </Reveal>
         <div className="lux-split-copy">
           <SectionHeading
             kicker="Site intelligence"
-            title={<>Your site becomes <em>searchable memory.</em></>}
-            copy="Every image, video, and site capture joins the project's evolving record — so a question about last week's pour is answered in seconds, with the exact frame attached."
+            title={<>Site captures become <em>searchable memory.</em></>}
+            copy="The goal: every image, video, and site capture joins the project's evolving record — so a question about last week's pour is answered in seconds, with the exact frame attached."
           />
+          <div className="lux-split-badge"><PreviewBadge /></div>
         </div>
       </div>
     </section>

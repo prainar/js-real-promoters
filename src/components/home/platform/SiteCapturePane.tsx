@@ -12,7 +12,7 @@ export function SiteCapturePane() {
         className="capture-img"
         draggable={false}
       />
-      <span className="capture-tag">● Live capture · Zone B/C</span>
+      <span className="capture-tag">Illustrative capture · Zone B/C</span>
       {CAPTURE_BOXES.map((b) => (
         <div
           key={b.label}

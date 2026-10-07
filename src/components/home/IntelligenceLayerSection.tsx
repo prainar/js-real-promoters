@@ -13,8 +13,8 @@ export function IntelligenceLayerSection() {
       <div className="shell">
         <SectionHeading
           kicker="The intelligence layer"
-          title={<>One layer that understands <em>the whole project.</em></>}
-          copy="JS Real Promoters sits between the field and the office — turning scattered inputs into one continuously-updated understanding your team can act on."
+          title={<>One layer, built to understand <em>the whole project.</em></>}
+          copy="The platform is designed to sit between the field and the office — turning scattered inputs into one continuously-updated understanding your team can act on."
         />
         <div className="intel-grid">
           {LAYERS.map((l, i) => (

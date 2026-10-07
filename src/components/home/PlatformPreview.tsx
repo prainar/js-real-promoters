@@ -26,7 +26,8 @@ export function PlatformPreview() {
               <span className="os-dot" aria-hidden="true" />
               <span>Project: {PROJECT_NAME}</span>
               <span className="os-sep">·</span>
-              <span>Active intelligence</span>
+              <span>Illustrative view</span>
+              <span className="os-titlebar-note">Example data</span>
             </div>
             <div className="os-body">
               <MetricRibbon />

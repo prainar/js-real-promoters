@@ -2,9 +2,9 @@ import { Reveal } from "../common/Reveal";
 import { SectionHeading } from "../common/SectionHeading";
 
 const PRINCIPLES = [
-  { title: "Deterministic citations", body: "No hallucinated reports. Every claim links back to an image, invoice, or drawing ID." },
-  { title: "No autonomous sign-off", body: "The system observes and calculates. Licensed professionals keep approval authority." },
-  { title: "Your data stays yours", body: "Blueprints, contracts, and site video are private — never trained into public models." },
+  { title: "Cited by design", body: "Built to link every claim back to a source — an image, invoice, or drawing ID — rather than generate unsupported text." },
+  { title: "No autonomous sign-off", body: "The platform is built to observe and calculate. Licensed professionals keep approval authority." },
+  { title: "Your data stays yours", body: "Designed so blueprints, contracts, and site video remain private — not used to train public models." },
 ];
 
 export function TrustSection() {
@@ -14,7 +14,7 @@ export function TrustSection() {
         <SectionHeading
           kicker="Human in the loop"
           title={<>AI that assists decisions. <em>People who stay in command.</em></>}
-          copy="The point isn't to remove the engineer. It's to make sure nothing important reaches them late."
+          copy="These are the principles we're building the platform to. The point isn't to remove the engineer — it's to make sure nothing important reaches them late."
         />
         <div className="trust-grid">
           {PRINCIPLES.map((p, i) => (

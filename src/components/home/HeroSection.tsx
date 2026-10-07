@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "../../App";
+import { PreviewBadge } from "../common/PreviewBadge";
 
 // Bold static editorial hero on warm paper. Big Manrope ExtraBold headline,
 // gold kicker + hairline, one architectural image, ochre + ghost CTA.
@@ -32,9 +33,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.14 }}
           >
-            An intelligence layer for the people who build the world — connecting site cameras,
-            documents, schedules, and BOQs, so your team sees variance, risk, and cost as it happens,
-            not weeks later.
+            We're building an intelligence layer for the people who build the world — designed to
+            connect site cameras, documents, schedules, and BOQs so teams can see variance, risk, and
+            cost as it happens, not weeks later.
           </motion.p>
           <motion.div
             className="lux-hero-actions"
@@ -48,6 +49,14 @@ export function HeroSection() {
             <Link to="/contact" className="button button-ghost-dark">
               Talk to the team
             </Link>
+          </motion.div>
+          <motion.div
+            className="lux-hero-badge"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <PreviewBadge label="Platform in development · engineer-led construction today" />
           </motion.div>
         </div>
 

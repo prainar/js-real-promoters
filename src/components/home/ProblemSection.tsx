@@ -25,7 +25,7 @@ export function ProblemSection() {
             <span className="problem-arrow" aria-hidden="true">↓</span>
             <div className="problem-core">
               <span className="problem-core-k">JS Real Promoters · Orchestrator</span>
-              <strong>One ground truth for the project</strong>
+              <strong>Toward one ground truth for the project</strong>
             </div>
           </div>
         </Reveal>
