@@ -196,5 +196,6 @@
 .lux-split-badge{margin-top:24px}
 
 /* Icon tiles: lucide SVGs are inline by default (baseline gap pushes them up).
-   Force block so grid/place-items centers them exactly. */
-.agent-icon svg,.audience-icon svg{display:block}
+   Force block + flex centering so the glyph sits dead-center in the box. */
+.agent-icon,.audience-icon{display:flex;align-items:center;justify-content:center;line-height:0}
+.agent-icon svg,.audience-icon svg{display:block;margin:0}
