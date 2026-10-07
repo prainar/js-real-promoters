@@ -194,3 +194,7 @@
 .os-titlebar-note{margin-left:auto;font:500 10px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);border:1px solid var(--line);border-radius:3px;padding:3px 7px}
 .lux-hero-badge{margin-top:24px}
 .lux-split-badge{margin-top:24px}
+
+/* Icon tiles: lucide SVGs are inline by default (baseline gap pushes them up).
+   Force block so grid/place-items centers them exactly. */
+.agent-icon svg,.audience-icon svg{display:block}
