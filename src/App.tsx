@@ -1,5 +1,10 @@
 import { FormEvent, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import {
+  HeroSection, ProblemSection, IntelligenceLayerSection, WorkforceSection,
+  HowItWorksSection, PlatformPreview, SiteIntelligenceSection, TrustSection,
+  AudienceSection, RoadmapSection, FinalCTA,
+} from "./components/home";
+import { PlatformPage } from "./components/platform/PlatformPage";
 
 type Project = { slug: string; name: string; category: "Residential" | "Commercial"; location: string; area: string; year: string; image: string; description: string };
 
@@ -18,13 +23,6 @@ const services = [
   ["06", "Housing Loan Support", "Helpful assistance as you navigate your home-financing process."]
 ];
 
-const product = [
-  ["01", "Progress Photo Timeline", "Regular site photos organized into a simple visual timeline, so you can see how your project is coming along."],
-  ["02", "Milestone Tracking", "Clear markers for each construction stage, from foundation to handover, so you always know what's next."],
-  ["03", "Client Updates", "Digital status updates sent directly to you, cutting down on back-and-forth calls for routine progress checks."],
-  ["04", "AI-Assisted Insights", "Early-stage AI tools that help flag progress patterns and support more informed planning conversations."]
-];
-
 const phone = "9688983076";
 const wa = `https://wa.me/91${phone}`;
 const contact = { email: "jsrealpromoters1@gmail.com", address: "145, Ganapathy Building, 2nd Floor, Near Railway Station, Erode – 638 001" };
@@ -34,7 +32,7 @@ function Logo() {
 }
 
 function navigate(event: React.MouseEvent<HTMLAnchorElement>, to: string) { event.preventDefault(); window.history.pushState({}, "", to); window.dispatchEvent(new PopStateEvent("popstate")); window.scrollTo({ top: 0, behavior: "smooth" }); }
-function Link({ to, children, className = "" }: {to: string; children: React.ReactNode; className?: string}) { return <a href={to} className={className} onClick={(e) => navigate(e, to)}>{children}</a>; }
+export function Link({ to, children, className = "" }: {to: string; children: React.ReactNode; className?: string}) { return <a href={to} className={className} onClick={(e) => navigate(e, to)}>{children}</a>; }
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -48,21 +46,24 @@ function Header() {
 
   const isActive = (href: string) => path === href || (path === "/" && href === "/");
 
-  return <header><div className="nav shell"><Logo/><button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? "×" : "☰"}</button><nav className={open ? "open" : ""}><Link to="/services" className={isActive("/services") ? "active" : ""}>Services</Link><Link to="/projects" className={isActive("/projects") ? "active" : ""}>Projects</Link><Link to="/about" className={isActive("/about") ? "active" : ""}>About us</Link><Link to="/contact" className={isActive("/contact") ? "active" : ""}>Contact</Link><Link to="/contact" className="button button-small">Get a quote</Link></nav></div></header>;
+  return <header><div className="nav shell"><Logo/><button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? "×" : "☰"}</button><nav className={open ? "open" : ""}><Link to="/platform" className={isActive("/platform") ? "active" : ""}>Platform</Link><Link to="/services" className={isActive("/services") ? "active" : ""}>Services</Link><Link to="/projects" className={isActive("/projects") ? "active" : ""}>Projects</Link><Link to="/about" className={isActive("/about") ? "active" : ""}>Company</Link><Link to="/contact" className="button button-small">Request access</Link></nav></div></header>;
 }
 function Footer() { return <footer><div className="shell footer-grid"><div><Logo/><p>Building spaces with care, clarity, and intelligent technology.</p></div><div><h4>Explore</h4><Link to="/services">Services</Link><Link to="/projects">Projects</Link><Link to="/about">About us</Link></div><div><h4>Contact</h4><a href={`tel:+91${phone}`}>+91 96889 83076</a><a href={`mailto:${contact.email}`}>{contact.email}</a><p>{contact.address}</p></div></div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} JS Real Promoters</span></div></footer>; }
 function SectionTitle({ eyebrow, title, copy }: {eyebrow: string; title: string; copy?: string}) { return <div className="section-intro"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{copy && <p>{copy}</p>}</div>; }
 
 function Home() { return <>
-  <section className="hero"><div className="hero-image"/><div className="hero-overlay"/><div className="shell hero-content"><motion.p initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.55}} className="eyebrow light">Erode · Tamil Nadu</motion.p><motion.h1 initial={{opacity:0,y:22}} animate={{opacity:1,y:0}} transition={{duration:.65, delay:.08}}>Building quality.<br/><em>Powered by intelligent technology.</em></motion.h1><motion.p initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.65, delay:.16}} className="hero-copy">We build intelligent digital tools that help architects, engineers, and construction teams plan, monitor, and manage projects more efficiently. Engineer-led construction meets AI-powered insight—digital-first planning and real-time visibility, from foundation to handover.</motion.p><motion.div initial={{opacity:0,y:15}} animate={{opacity:1,y:0}} transition={{duration:.65, delay:.24}} className="actions"><Link to="/projects" className="button">View projects <i>→</i></Link><Link to="/contact" className="button button-ghost">Free consultation</Link></motion.div></div></section>
-  <section className="section shell"><SectionTitle eyebrow="OUR EVOLUTION" title="From manual monitoring to intelligent decision-making." copy="We're investing in digital and AI-powered tools to transform how construction projects are planned, tracked, and delivered."/><ul className="tick-list"><li>Digital project planning and coordination</li><li>Secure document management</li><li>Real-time project updates</li><li>Client collaboration portal</li><li>AI-assisted design visualization</li><li>SiteSense AI — an AI-powered progress tracker in development</li></ul></section>
-  <section className="section process"><div className="shell"><SectionTitle eyebrow="OUR ROADMAP" title="Digital innovation, step by step."/><div className="steps">{[["Construction","Services"],["Digital Project","Tracking"],["SiteSense AI","Pilot"],["Smart Construction","Platform"]].map((x,i) => <div key={i}><b>0{i+1}</b><span>{x[0]}<br/>{x[1]}</span></div>)}</div></div></section>
-  <section className="proof"><div className="shell proof-grid"><div><span>Engineer-led</span><b>Planning & construction</b></div><div><span>Digital-first</span><b>Tracking & client visibility</b></div><div><span>Local expertise</span><b>Erode & surrounding areas</b></div><div><span>Clear support</span><b>From plan to handover</b></div></div></section>
-  <section className="section shell"><SectionTitle eyebrow="THE PRODUCT" title="SiteSense AI: an AI-powered project companion." copy="Alongside our construction services, we're building SiteSense AI — a digital layer that keeps clients close to their project without a site visit."/><div className="service-grid">{product.map(([number, title, text]) => <div className="service-card" key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></div>)}</div></section>
-  <section className="section project-feature"><div className="shell"><SectionTitle eyebrow="SELECTED WORK" title="Projects built with precision and technology." copy="Each project tracked digitally, visualized in real-time, and delivered with AI-powered insights."/><div className="featured-projects">{projects.slice(0,2).map(p => <ProjectCard key={p.slug} project={p}/>)}</div><Link to="/projects" className="text-link">See all projects <i>→</i></Link></div></section>
-  <section className="section shell split"><div className="split-image"/><div className="split-content"><SectionTitle eyebrow="WHY JS REAL PROMOTERS" title="Engineering meets intelligent technology."/><ul className="tick-list"><li>Engineer-led expertise with digital tools</li><li>Real-time project tracking and updates</li><li>AI-assisted planning and progress visualization</li><li>Transparent, data-driven decisions</li><li>Quality construction, backed by a growing AI platform</li></ul><Link to="/about" className="text-link">Learn about us <i>→</i></Link></div></section>
-  <section className="section process"><div className="shell"><SectionTitle eyebrow="OUR PROCESS" title="Seven steps to excellence, tracked digitally."/><div className="steps">{["Consult", "Plan", "Design", "Estimate", "Construct", "Inspect", "Handover"].map((x,i) => <div key={x}><b>0{i+1}</b><span>{x}</span></div>)}</div></div></section>
-  <CTA/></> }
+  <HeroSection/>
+  <ProblemSection/>
+  <IntelligenceLayerSection/>
+  <WorkforceSection/>
+  <HowItWorksSection/>
+  <PlatformPreview/>
+  <SiteIntelligenceSection/>
+  <TrustSection/>
+  <AudienceSection/>
+  <RoadmapSection/>
+  <FinalCTA/>
+</> }
 
 function ProjectCard({ project }: {project: Project}) { return <Link to={`/projects/${project.slug}`} className="project-card"><div className="project-image" style={{backgroundImage:`url(${project.image})`}}/><div className="project-meta"><span>{project.category} · {project.year}</span><h3>{project.name}</h3><p>{project.location}</p></div></Link>; }
 function Services() { return <><PageHero eyebrow="SERVICES" title="Practical expertise for every stage." copy="From the first plan to final handover, we help bring clarity to the work ahead."/><section className="section shell"><div className="service-grid service-full">{services.map(([number,title,text]) => <article className="service-card" key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p><i>↗</i></article>)}</div></section><CTA/></> }
@@ -86,5 +87,5 @@ function Contact() {
 function PageHero({ eyebrow,title,copy }: {eyebrow:string;title:string;copy:string}) { return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div></section>; }
 function CTA() { return <section className="cta"><div className="shell"><span className="eyebrow light">START A CONVERSATION</span><h2>Build smarter with intelligent technology and engineering expertise.</h2><p>Experience construction reimagined. Talk to our team about your project and discover how digital-first planning and AI-powered insight transform outcomes.</p><Link to="/contact" className="button">Book a consultation <i>→</i></Link></div></section>; }
 
-function App() { const [path,setPath] = useState(window.location.pathname); useEffect(()=>{ const handler=()=>setPath(window.location.pathname); addEventListener("popstate",handler); return()=>removeEventListener("popstate",handler); },[]); let page: React.ReactNode; const project = projects.find(x=>`/projects/${x.slug}`===path); if(project) page=<ProjectDetail project={project}/>; else if(path==="/") page=<Home/>; else if(path==="/services") page=<Services/>; else if(path==="/projects") page=<Projects/>; else if(path==="/about") page=<About/>; else if(path==="/contact") page=<Contact/>; else page=<><PageHero eyebrow="404" title="Page not found." copy="The page you are looking for is not available."/><div className="shell section"><Link to="/" className="button dark">Back home</Link></div></>; return <><Header/><main>{page}</main><Footer/><a className="whatsapp" href={wa} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">◔</a></>; }
+function App() { const [path,setPath] = useState(window.location.pathname); useEffect(()=>{ const handler=()=>setPath(window.location.pathname); addEventListener("popstate",handler); return()=>removeEventListener("popstate",handler); },[]); let page: React.ReactNode; const project = projects.find(x=>`/projects/${x.slug}`===path); if(project) page=<ProjectDetail project={project}/>; else if(path==="/") page=<Home/>; else if(path==="/platform") page=<PlatformPage/>; else if(path==="/services") page=<Services/>; else if(path==="/projects") page=<Projects/>; else if(path==="/about") page=<About/>; else if(path==="/contact") page=<Contact/>; else page=<><PageHero eyebrow="404" title="Page not found." copy="The page you are looking for is not available."/><div className="shell section"><Link to="/" className="button dark">Back home</Link></div></>; return <><Header/><main>{page}</main><Footer/><a className="whatsapp" href={wa} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">◔</a></>; }
 export default App;
