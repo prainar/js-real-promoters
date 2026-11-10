@@ -25,8 +25,7 @@ const services = [
 
 const founders: { name: string; title: string; linkedin?: string }[] = [
   { name: "Jagan Veeraraghavan", title: "CEO", linkedin: "https://www.linkedin.com/in/jagan-veeraraghavan-29a4272bb" },
-  { name: "Milan", title: "COO", linkedin: "https://www.linkedin.com/in/milan-jha-05b0003b0/" },
-  { name: "Rakhi", title: "Director of Ideation", linkedin: "https://www.linkedin.com/in/rakhi-jha-94487a21b/" }
+  { name: "Prainart Francis D", title: "COO", linkedin: "https://www.linkedin.com/in/prainart-francis-69450127b" }
 ];
 
 const phone = "9688983076";
