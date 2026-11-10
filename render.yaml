@@ -4,3 +4,6 @@ services:
     env: static
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
+    envVars:
+      - key: VITE_ENQUIRY_ENDPOINT
+        sync: false

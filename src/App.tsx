@@ -28,6 +28,7 @@ const founders: { name: string; title: string; linkedin?: string }[] = [
   { name: "Prainart Francis D", title: "COO", linkedin: "https://www.linkedin.com/in/prainart-francis-69450127b" }
 ];
 
+const enquiryEndpoint = import.meta.env.VITE_ENQUIRY_ENDPOINT as string | undefined;
 const phone = "9688983076";
 const wa = `https://wa.me/91${phone}`;
 const contact = { email: "jsrealpromoters1@gmail.com", address: "145, Ganapathy Building, 2nd Floor, Near Railway Station, Erode – 638 001" };
@@ -84,7 +85,7 @@ function Contact() {
     e.preventDefault(); const values = new FormData(e.currentTarget);
     setWhatsappText(`Hello JS Real Promoters, I am ${values.get("name")} and would like to discuss a ${values.get("service")} project in ${values.get("location")}. Budget: ${values.get("budget")}. Timeline: ${values.get("timeline")}.`);
     setSending(true); setError("");
-    try { const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined; if (endpoint) { const response = await fetch(endpoint, { method: "POST", headers: { Accept: "application/json" }, body: values }); if (!response.ok) throw new Error("We could not send your enquiry. Please use WhatsApp or call us directly."); } setSent(true); }
+    try { if (!enquiryEndpoint) throw new Error("Enquiries are not set up yet. Please use WhatsApp or call us directly."); await fetch(enquiryEndpoint, { method: "POST", mode: "no-cors", body: JSON.stringify(Object.fromEntries(values)) }); setSent(true); }
     catch (err) { setError(err instanceof Error ? err.message : "Unable to send your enquiry right now."); }
     finally { setSending(false); }
   }
